@@ -44,10 +44,10 @@
         button: "Choose This Course"
       },
       courses: [
-        { title: "Madni Qaida", urdu: "مدنی قاعدہ", description: "Build a strong foundation in Arabic letters, sounds and joining words.", icon: "book" },
-        { title: "Nazra Quran", urdu: "ناظرہ قرآن", description: "Develop fluent Quran reading with careful pronunciation and Tajweed.", icon: "quran" },
-        { title: "Hifz Quran", urdu: "حفظ قرآن", description: "Follow a focused memorisation routine with regular guided revision.", icon: "star" },
-        { title: "Duayein", urdu: "دعائیں", description: "Learn essential daily duas with meaning and practical use.", icon: "hands" }
+        { title: "Madani Qaida", urdu: "مدنی قاعدہ", description: "Foundation — Arabic letters, correct pronunciation (Makharij), basic reading rules.", duration: "30 minutes", audience: "For beginners, kids & adults", icon: "book" },
+        { title: "Nazra Quran", urdu: "ناظرہ قرآن", description: "Read the Holy Quran fluently with correct pronunciation.", duration: "30 minutes", audience: "For kids & adults", icon: "quran" },
+        { title: "Hifz-ul-Quran", urdu: "حفظ قرآن", description: "Memorize the Holy Quran with structured revision.", duration: "1 hour", audience: "For dedicated students, kids & adults", icon: "star" },
+        { title: "Daily/Masnoon Duas", urdu: "دعائیں", description: "Essential daily supplications with understanding.", duration: "30 minutes", audience: "For everyone", icon: "hands" }
       ],
       facts: [
         { title: "4 Islamic Courses", icon: "courses" },
@@ -76,10 +76,10 @@
         title: "Start Your Quran Learning Journey",
         intro: "Simple fees, clearly explained before classes begin.",
         admissionLabel: "Admission Fee",
-        admissionFee: "PKR 2,000",
+        admissionFee: "Rs. 2,000",
         admissionNote: "one-time",
         monthlyLabel: "Monthly Fee",
-        monthlyFee: "PKR 1,000",
+        monthlyFee: "Rs. 1,000",
         paymentTitle: "How to Pay Your Fee",
         paymentText: "Pay via JazzCash, then use the WhatsApp Us button in the navigation and share your transaction details for confirmation.",
         openForm: "Open Admission Form",
@@ -122,7 +122,7 @@
   </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="color-scheme" content="light dark">
+  <meta name="color-scheme" content="light">
   <meta name="theme-color" content="#FFFFFF">
   <meta name="description" content="Online Quran education for children and adults through Al Noor Quran Academy.">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A1F33'/%3E%3Cpath d='M14 42V25c0-11 8-18 18-22 10 4 18 11 18 22v17h-9V27c0-6-4-10-9-13-5 3-9 7-9 13v15Z' fill='%23fffdf8'/%3E%3Cpath d='M13 47c10 7 27 8 39 1' fill='none' stroke='%23C9A227' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='m48 44 7 3-5 5' fill='%23C9A227'/%3E%3C/svg%3E">
@@ -132,32 +132,23 @@
   <title>Al Noor Quran Academy — Learn the Quran Online</title>
   <style>
     :root{
-      color-scheme:light dark;
-      --navy:#0b2741;
+      color-scheme:light;
+      --navy:#08243d;
       --navy-soft:#1a4263;
       --gold:#C9A227;
-      --gold-deep:#9b7811;
+      --gold-deep:#8e6d0e;
       --paper:#fffdf8;
-      --cream:#f7f1e3;
-      --cream-2:#fbf7ee;
+      --cream:#f7efdc;
+      --cream-2:#fbf5e9;
+      --beige:#f3ead8;
+      --gold-wash:#faf1d9;
       --white:#ffffff;
-      --ink:#0b2741;
-      --muted:#526679;
-      --line:#e8dcc1;
-      --shadow:0 18px 45px rgba(11,39,65,.10);
+      --ink:#08243d;
+      --muted:#465f74;
+      --line:#ddcda9;
+      --line-soft:#eadfc8;
+      --shadow:0 12px 30px rgba(11,39,65,.08);
       --sans:"Manrope",sans-serif;
-    }
-    @media(prefers-color-scheme:dark){
-      :root{
-        --paper:#faf6ec;
-        --cream:#f2ead9;
-        --cream-2:#f7f1e5;
-        --white:#fffdf9;
-        --ink:#081f34;
-        --muted:#455c70;
-        --line:#dacdaf;
-        --shadow:0 18px 45px rgba(8,31,52,.13);
-      }
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth;scroll-padding-top:84px}
@@ -170,7 +161,9 @@
     h1,h2,h3,p{margin-top:0}
     h1,h2,h3{line-height:1.13}
     .container{width:min(1180px,calc(100% - 44px));margin-inline:auto}
-    .section{padding:96px 0}
+    .section{padding:94px 0}
+    main>section:not(.hero){position:relative;border-top:1px solid var(--line-soft)}
+    main>section:not(.hero):before{content:"";position:absolute;top:-1px;left:50%;width:min(112px,24vw);height:2px;transform:translateX(-50%);background:var(--gold);opacity:.62}
     .skip{position:fixed;left:12px;top:-70px;z-index:1000;padding:10px 14px;background:var(--white);color:var(--navy);border:1px solid var(--line)}
     .skip:focus{top:12px}
 
@@ -202,17 +195,16 @@
     .hero{position:relative;min-height:670px;isolation:isolate;overflow:hidden;background:var(--cream)}
     .hero-media{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:center 55%;pointer-events:none}
     .hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(255,253,248,.97) 0%,rgba(255,253,248,.91) 37%,rgba(255,253,248,.61) 59%,rgba(255,253,248,.22) 78%,rgba(255,253,248,.30) 100%)}
-    .hero-inscription{position:absolute;top:14px;left:50%;z-index:1;width:min(860px,calc(100% - 40px));padding:2px 24px 4px;transform:translateX(-50%);background:radial-gradient(ellipse at center,rgba(255,253,248,.76) 0%,rgba(255,253,248,.38) 48%,rgba(255,253,248,0) 76%);text-align:center;pointer-events:none}
-    .inscription-arabic{margin:0;color:var(--gold-deep);font-family:"Noto Naskh Arabic",serif;font-size:clamp(1.55rem,2.6vw,2.15rem);font-weight:700;line-height:1.22;text-shadow:0 1px 2px rgba(255,255,255,.96),0 3px 14px rgba(11,39,65,.24)}
-    .inscription-urdu{margin:-1px 0 0;color:rgba(11,39,65,.82);font-family:"Noto Naskh Arabic",serif;font-size:.88rem;font-weight:600;line-height:1.25;text-shadow:0 1px 4px rgba(255,255,255,.95)}
-    .inscription-attribution{display:block;margin-top:0;color:rgba(11,39,65,.66);font-size:.55rem;font-weight:700;line-height:1.2;letter-spacing:.12em;text-shadow:0 1px 3px rgba(255,255,255,.96)}
+    .hero-inscription{position:absolute;top:14px;left:50%;z-index:1;width:min(860px,calc(100% - 40px));padding:2px 24px 4px;transform:translateX(-50%);background:transparent;text-align:center;pointer-events:none}
+    .inscription-arabic{margin:0;color:var(--gold-deep);font-family:"Noto Naskh Arabic",serif;font-size:clamp(1.55rem,2.6vw,2.15rem);font-weight:700;line-height:1.22;text-shadow:0 1px 1px rgba(255,255,255,.55)}
+    .inscription-urdu{margin:-1px 0 0;color:rgba(11,39,65,.86);font-family:"Noto Naskh Arabic",serif;font-size:.88rem;font-weight:600;line-height:1.25;text-shadow:0 1px 1px rgba(255,255,255,.5)}
+    .inscription-attribution{display:block;margin-top:0;color:rgba(11,39,65,.7);font-size:.55rem;font-weight:700;line-height:1.2;letter-spacing:.12em;text-shadow:none}
     .hero-inner{min-height:670px;display:flex;align-items:center;padding:88px 0}
     .hero-copy{width:min(690px,62%)}
     .eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:18px;color:var(--gold-deep);font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
     .eyebrow:before{content:"";width:38px;height:2px;background:var(--gold)}
-    .hero h1{position:relative;width:max-content;max-width:100%;margin-bottom:22px;padding:10px 8px 7px 0;font-family:var(--sans);font-size:clamp(3.15rem,5.2vw,5rem);font-weight:800;line-height:.9;text-transform:none;isolation:isolate}
-    .hero h1:before{content:"";position:absolute;inset:-24px -46px -22px -34px;z-index:-1;background:radial-gradient(ellipse at 38% 50%,rgba(255,253,248,.94) 0%,rgba(255,253,248,.72) 46%,rgba(255,253,248,0) 76%);pointer-events:none}
-    .hero-wordmark-line{display:flex;flex-direction:column;align-items:flex-start;width:max-content;max-width:100%;white-space:nowrap;text-shadow:0 1px 0 rgba(255,255,255,.98),0 3px 14px rgba(255,253,248,.94)}
+    .hero h1{position:relative;width:max-content;max-width:100%;margin-bottom:22px;padding:10px 8px 7px 0;font-family:var(--sans);font-size:clamp(3.15rem,5.2vw,5rem);font-weight:800;line-height:.9;text-transform:none}
+    .hero-wordmark-line{display:flex;flex-direction:column;align-items:flex-start;width:max-content;max-width:100%;white-space:nowrap;text-shadow:0 1px 1px rgba(255,255,255,.5)}
     .hero-wordmark-primary{display:block;color:var(--navy);font-size:1em;font-weight:800;line-height:.88;letter-spacing:-.065em}
     .hero-wordmark-secondary{display:block;margin-top:.38em;color:var(--gold-deep);font-size:.29em;font-weight:800;line-height:1;letter-spacing:.24em}
     .hero-tagline{margin-bottom:15px;color:var(--navy);font-size:1.22rem;font-weight:700}
@@ -221,23 +213,29 @@
     .btn:hover{transform:translateY(-2px)}
     .btn:after{content:"→"}
     .btn-gold{background:var(--gold);color:var(--navy);box-shadow:0 10px 24px rgba(155,120,17,.18)}
-    .btn-navy{background:var(--navy);color:#fff}
+    .btn-navy{border-color:var(--gold);background:var(--gold);color:var(--navy)}
     .btn-outline{min-height:41px;padding:8px 14px;border-color:var(--gold);background:transparent;color:var(--navy)}
 
     .section-heading{max-width:720px;margin:0 auto 43px;text-align:center}
     .section-heading .kicker{margin-bottom:10px;color:var(--gold-deep);font-size:.69rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
     .section-heading h2{margin-bottom:12px;color:var(--navy);font-size:clamp(2rem,3.5vw,3rem);font-weight:800;letter-spacing:-.035em}
     .section-heading p{margin-bottom:0;color:var(--muted);font-size:.9rem}
-    .courses{padding:90px 0;background:var(--white)}
-    .course-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-    .course-card{display:flex;flex-direction:column;align-items:flex-start;min-height:310px;padding:28px 24px;border:1px solid var(--line);border-radius:10px;background:var(--cream-2);box-shadow:0 8px 24px rgba(11,39,65,.045)}
+    .courses{padding:94px 0;background:var(--gold-wash)}
+    .course-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .course-card{display:flex;flex-direction:column;align-items:flex-start;min-height:310px;padding:28px 24px;border:1px solid #dcc99c;border-radius:10px;background:var(--white);box-shadow:0 10px 26px rgba(11,39,65,.07)}
     .course-icon{display:grid;place-items:center;width:58px;height:58px;margin-bottom:23px;border-radius:50%;background:var(--white);color:var(--navy);box-shadow:inset 0 0 0 1px var(--gold)}
     .course-icon svg{width:29px;height:29px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
     .course-card h3{margin-bottom:5px;color:var(--navy);font-size:1.15rem}
     .course-urdu{margin-bottom:10px;color:var(--gold-deep);font-family:"Noto Naskh Arabic",serif;font-size:1.22rem;line-height:1.3}
-    .course-card p{flex:1;margin-bottom:20px;color:var(--muted);font-size:.76rem}
+    .course-card p{margin-bottom:18px;color:var(--muted);font-size:.76rem}
+    .course-details{display:grid;width:100%;margin:0 0 22px;border-block:1px solid var(--line-soft)}
+    .course-detail{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:9px 0;color:var(--muted);font-size:.68rem;line-height:1.4}
+    .course-detail+ .course-detail{border-top:1px solid var(--line-soft)}
+    .course-detail-label{flex:none;color:var(--gold-deep);font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+    .course-detail-value{text-align:right;color:var(--navy);font-weight:700}
+    .course-card .btn{margin-top:auto}
 
-    .fact-band{padding:31px 0;background:var(--cream);border-block:1px solid var(--line)}
+    .fact-band{padding:34px 0;background:var(--beige);border-block:1px solid var(--line)}
     .fact-grid{display:grid;grid-template-columns:repeat(4,1fr)}
     .fact{display:flex;align-items:center;gap:14px;padding:12px 24px}
     .fact:not(:last-child){border-right:1px solid #d9c9a6}
@@ -254,14 +252,14 @@
     .about-copy h2{margin-bottom:20px;color:var(--navy);font-size:clamp(2rem,4vw,3.4rem);font-weight:800;letter-spacing:-.045em}
     .about-copy>p{margin-bottom:34px;color:var(--muted);font-size:.9rem}
     .why-title{margin-bottom:18px;color:var(--navy);font-size:1.15rem}
-    .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 22px}
-    .why-item{display:grid;grid-template-columns:34px 1fr;gap:11px}
+    .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .why-item{display:grid;grid-template-columns:34px 1fr;gap:11px;padding:16px;border:1px solid var(--line-soft);border-radius:8px;background:var(--white);box-shadow:0 7px 18px rgba(11,39,65,.055)}
     .why-number{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--gold);color:var(--navy);font-size:.67rem;font-weight:800}
     .why-item h3{margin-bottom:4px;color:var(--navy);font-size:.82rem}
     .why-item p{margin:0;color:var(--muted);font-size:.69rem;line-height:1.5}
 
-    .fees{background:var(--white)}
-    .fees-layout{display:grid;grid-template-columns:.82fr 1.18fr;overflow:hidden;border:1px solid var(--line);border-radius:12px;background:var(--cream-2);box-shadow:var(--shadow)}
+    .fees{background:var(--cream-2)}
+    .fees-layout{display:grid;grid-template-columns:.82fr 1.18fr;overflow:hidden;border:1px solid #d9c496;border-radius:12px;background:var(--paper);box-shadow:0 14px 34px rgba(11,39,65,.075)}
     .fee-panel{padding:52px;background:var(--cream)}
     .fee-panel h2{margin-bottom:15px;color:var(--navy);font-size:clamp(2rem,3.6vw,3.1rem);font-weight:800;letter-spacing:-.04em}
     .fee-panel>p{color:var(--muted);font-size:.84rem}
@@ -291,7 +289,7 @@
     .form-status{display:none;margin-top:12px;padding:11px 13px;border-left:3px solid var(--gold);background:var(--cream);color:var(--navy);font-size:.72rem}
     .form-status.show{display:block}
 
-    .how{background:var(--cream-2)}
+    .how{background:var(--gold-wash)}
     .steps{display:grid;grid-template-columns:repeat(4,1fr);position:relative}
     .steps:before{content:"";position:absolute;top:32px;left:11%;right:11%;height:1px;background:#d5bf81}
     .step{position:relative;padding:0 18px;text-align:center}
@@ -299,12 +297,12 @@
     .step h3{margin-bottom:7px;color:var(--navy);font-size:.92rem}
     .step p{color:var(--muted);font-size:.71rem}
 
-    .contact{padding:78px 0;background:var(--white);text-align:center;border-top:1px solid var(--line)}
+    .contact{padding:80px 0;background:var(--paper);text-align:center;border-top:1px solid var(--line)}
     .contact .eyebrow{justify-content:center}
     .contact h2{margin-bottom:12px;color:var(--navy);font-size:clamp(2rem,4vw,3.1rem);font-weight:800;letter-spacing:-.04em}
     .contact p{max-width:700px;margin:0 auto;color:var(--muted);font-size:.87rem}
 
-    footer{padding:60px 0 24px;background:var(--cream);color:var(--navy);border-top:1px solid var(--line)}
+    footer{padding:60px 0 24px;background:var(--beige);color:var(--navy);border-top:1px solid var(--line)}
     .footer-grid{display:grid;grid-template-columns:1.5fr .65fr .75fr .95fr;gap:42px}
     .footer-brand p{max-width:360px;margin:17px 0 0;color:var(--muted);font-size:.75rem}
     .footer-title{margin-bottom:14px;color:var(--navy);font-size:.84rem}
@@ -347,7 +345,7 @@
       .brand{gap:6px}.brand-mark{width:34px;height:34px}.brand-lockup{width:112px}.brand-primary{font-size:.67rem}.brand-secondary{font-size:.36rem;letter-spacing:.065em}.brand-swoosh{height:9px;margin-top:1px}.brand-swoosh path{stroke-width:3}
       .nav-wrap{gap:7px}.nav-whatsapp{min-height:38px;padding:7px 9px;font-size:.55rem}.nav-whatsapp svg{width:19px;height:19px}
       .nav-toggle{width:39px;height:39px}.nav-toggle span,.nav-toggle:before,.nav-toggle:after{left:9px}
-      .hero,.hero-inner{min-height:690px}.hero-inner{align-items:flex-start;padding:82px 0 68px}
+      .hero,.hero-inner{min-height:610px}.hero-inner{align-items:flex-start;padding:82px 0 54px}
       .hero-inscription{top:8px;width:calc(100% - 18px);padding:2px 6px 3px}
       .inscription-arabic{font-size:clamp(1.18rem,6.3vw,1.55rem);line-height:1.23}
       .inscription-urdu{font-size:.76rem;line-height:1.22}.inscription-attribution{font-size:.48rem;line-height:1.15;letter-spacing:.1em}
@@ -453,7 +451,7 @@
         star:'<path d="m16 4 3.3 7 7.7 1-5.6 5.5 1.4 7.6-6.8-3.7-6.8 3.7 1.4-7.6L5 12l7.7-1L16 4Z"/>',
         hands:'<path d="M9 26c-2-5-3-9-1-11 1-1 2 0 3 3v-7c0-2 3-2 3 0v6-8c0-2 3-2 3 0v8-6c0-2 3-2 3 0v8l2-3c2-2 4 0 3 2l-5 8H9Z"/>'
       };
-      document.getElementById('courseGrid').innerHTML=C.courses.map(function(course){return '<article class="course-card"><div class="course-icon"><svg viewBox="0 0 32 32" aria-hidden="true">'+courseIcons[course.icon]+'</svg></div><h3>'+course.title+'</h3><div class="course-urdu" dir="rtl" lang="ur">'+course.urdu+'</div><p>'+course.description+'</p><button class="btn btn-outline enroll-course" type="button" data-course="'+course.title+'">'+C.coursesSection.button+'</button></article>'}).join('');
+      document.getElementById('courseGrid').innerHTML=C.courses.map(function(course){return '<article class="course-card"><div class="course-icon"><svg viewBox="0 0 32 32" aria-hidden="true">'+courseIcons[course.icon]+'</svg></div><h3>'+course.title+'</h3><div class="course-urdu" dir="rtl" lang="ur">'+course.urdu+'</div><p>'+course.description+'</p><div class="course-details"><div class="course-detail"><span class="course-detail-label">Duration</span><span class="course-detail-value">'+course.duration+'</span></div><div class="course-detail"><span class="course-detail-label">For</span><span class="course-detail-value">'+course.audience.replace(/^For /,'')+'</span></div></div><button class="btn btn-outline enroll-course" type="button" data-course="'+course.title+'">'+C.coursesSection.button+'</button></article>'}).join('');
       var factIcons={
         courses:'<path d="M5 7c5 0 9 2 11 5 2-3 6-5 11-5v18c-5 0-9 1-11 4-2-3-6-4-11-4V7Z"/><path d="M16 12v17"/>',
         person:'<circle cx="16" cy="10" r="5"/><path d="M7 27c1-7 5-10 9-10s8 3 9 10"/>',
