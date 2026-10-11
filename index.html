@@ -269,7 +269,7 @@
     .hero-inner{min-height:max(680px,92svh);display:grid;grid-template-rows:auto 1fr;padding:clamp(24px,4vh,42px) 0 clamp(42px,6vh,68px)}
     .hero-inscription{position:relative;width:min(680px,100%);margin:0 auto;padding:0;background:transparent;text-align:center;pointer-events:none}
     .inscription-arabic{margin:0;color:#111111;font-family:"Noto Naskh Arabic",serif;font-size:clamp(1.55rem,2.55vw,2.25rem);font-weight:700;line-height:1.3;text-shadow:none}
-    .inscription-urdu{margin:1px 0 0;color:#ffffff;font-family:"Noto Naskh Arabic",serif;font-size:clamp(.84rem,1.15vw,1rem);font-weight:600;line-height:1.35;text-shadow:0 1px 3px rgba(0,0,0,.42)}
+    .inscription-urdu{margin:1px 0 0;color:#0a1f44;font-family:"Noto Naskh Arabic",serif;font-size:clamp(.84rem,1.15vw,1rem);font-weight:600;line-height:1.35;text-shadow:0 1px 3px rgba(0,0,0,.42)}
     .inscription-attribution{display:block;margin-top:4px;color:#0a1f44;font-size:.57rem;font-weight:800;line-height:1.3;letter-spacing:.15em;text-transform:uppercase;text-shadow:none}
     .hero-copy{align-self:center;width:min(650px,58%);padding-top:clamp(22px,5vh,58px);text-align:left}
     .eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:18px;color:var(--gold-deep);font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
@@ -278,7 +278,7 @@
     .hero h1{position:relative;width:max-content;max-width:100%;margin:0 0 24px;padding:0 0 2px;font-family:var(--sans);font-size:clamp(3.35rem,5.6vw,5.35rem);font-weight:800;line-height:.9;text-transform:none}
     .hero-wordmark-line{display:flex;flex-direction:column;align-items:flex-start;width:max-content;max-width:100%;white-space:nowrap;text-shadow:none}
     .hero-wordmark-primary{display:block;color:#0a1f44;font-size:1em;font-weight:800;line-height:.88;letter-spacing:-.065em}
-    .hero-wordmark-secondary{position:relative;display:block;margin-top:.28em;color:#ffffff;font-family:"Bodoni Moda",Georgia,serif;font-size:.43em;font-weight:600;line-height:1.05;letter-spacing:.075em}
+    .hero-wordmark-secondary{position:relative;display:block;margin-top:.28em;color:#111111;font-family:"Bodoni Moda",Georgia,serif;font-size:.43em;font-weight:600;line-height:1.05;letter-spacing:.075em}
     .hero-tagline{margin:0 0 13px;color:#0a1f44;font-size:1.22rem;font-weight:800}
     .hero-copy>p:not(.hero-tagline){max-width:610px;margin:0 0 25px;color:#203f59;font-size:.94rem;font-weight:500}
     .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;padding:11px 21px;border:1px solid transparent;border-radius:7px;font-weight:800;font-size:.78rem;transition:transform .18s,background .18s}
@@ -478,7 +478,7 @@
 
   <main id="main">
     <section class="hero" id="home">
-      <video class="hero-media" id="heroVideo" autoplay muted loop playsinline preload="auto" aria-label="An open Quran on a wooden rehal in warm golden light" src="hero-video.mp4"></video>
+      <video class="hero-media" id="heroVideo" src="hero-video.mp4" autoplay muted loop playsinline preload="auto" aria-label="An open Quran on a wooden rehal in warm golden light"></video>
       <div class="container hero-inner">
         <div class="hero-inscription" aria-label="Hadith from Sahih Bukhari">
           <p class="inscription-arabic" id="inscriptionArabic" dir="rtl" lang="ar"></p>
@@ -506,7 +506,7 @@
 
     <section class="joy" aria-labelledby="joyTitle"><div class="container joy-grid">
       <div class="joy-copy"><div class="eyebrow" id="joyEyebrow"></div><h2 id="joyTitle"></h2><p id="joyText"></p></div>
-      <div class="joy-frame"><video class="joy-video" id="joyVideo" autoplay muted loop playsinline preload="auto" src="section-video-1.mp4"></video></div>
+      <div class="joy-frame"><video class="joy-video" id="joyVideo" src="section-video-1.mp4" autoplay muted loop playsinline preload="auto"></video></div>
     </div></section>
 
     <section class="section about" id="about"><div class="container about-grid">
