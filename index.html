@@ -28,7 +28,7 @@
         { label: "Contact", link: "#contact" }
       ],
       hero: {
-        video: "hero-video.mp4",
+        image: "hero-quran.webp",
         inscriptionArabic: "خَيْرُكُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ",
         inscriptionUrdu: "(تم میں سے بہتر وہ ہے جو قرآن سیکھے اور سکھائے)",
         inscriptionAttribution: "Hadith · Sahih Bukhari",
@@ -478,7 +478,7 @@
 
   <main id="main">
     <section class="hero" id="home">
-      <video class="hero-media" id="heroVideo" autoplay muted loop playsinline preload="auto" aria-label="An open Quran on a wooden rehal in warm golden light"></video>
+      <img class="hero-media" id="heroImage" alt="An open Quran on a carved wooden rehal in warm golden light">
       <div class="container hero-inner">
         <div class="hero-inscription" aria-label="Hadith from Sahih Bukhari">
           <p class="inscription-arabic" id="inscriptionArabic" dir="rtl" lang="ar"></p>
@@ -550,7 +550,7 @@
       var wa=document.getElementById('navWhatsapp');wa.href=C.whatsapp.link;wa.setAttribute('aria-label',C.whatsapp.label);set('waLabel',C.whatsapp.label);
       set('inscriptionArabic',C.hero.inscriptionArabic);set('inscriptionUrdu',C.hero.inscriptionUrdu);set('inscriptionAttribution',C.hero.inscriptionAttribution);
       set('heroEyebrow',C.hero.eyebrow);var heroWords=C.hero.headline.trim().split(/\s+/),heroHeadline=document.getElementById('heroHeadline'),heroLine=document.createElement('span'),heroPrimary=document.createElement('span'),heroSecondary=document.createElement('span');heroLine.className='hero-wordmark-line';heroPrimary.className='hero-wordmark-primary';heroSecondary.className='hero-wordmark-secondary';heroPrimary.textContent=heroWords.slice(0,2).join(' ');heroSecondary.textContent=heroWords.slice(2).join(' ');heroLine.replaceChildren(heroPrimary,heroSecondary);heroHeadline.replaceChildren(heroLine);set('heroTagline',C.hero.tagline);set('heroParagraph',C.hero.paragraph);set('heroButton',C.hero.button);
-      var video=document.getElementById('heroVideo');video.src=C.hero.video;video.muted=true;video.defaultMuted=true;video.disablePictureInPicture=true;video.setAttribute('controlsList','nodownload noplaybackrate noremoteplayback');video.addEventListener('loadeddata',function(){video.play().catch(function(){})},{once:true});video.load();
+      var heroImage=document.getElementById('heroImage');heroImage.src=C.hero.image;
       function tickerGroup(hidden){return '<div class="ticker-group"'+(hidden?' aria-hidden="true"':'')+'>'+C.ticker.map(function(item){return '<div class="ticker-item"><span class="ticker-arabic" dir="rtl" lang="ar">'+item.arabic+'</span><span class="ticker-reference">'+item.reference+'</span><span class="ticker-urdu" dir="rtl" lang="ur">'+item.urdu+'</span><span class="ticker-separator" aria-hidden="true">✦</span></div>'}).join('')+'</div>'}
       document.getElementById('tickerTrack').innerHTML=tickerGroup(false)+tickerGroup(true);var ticker=document.getElementById('knowledgeTicker');ticker.addEventListener('pointerdown',function(){ticker.classList.add('paused')});['pointerup','pointercancel','pointerleave'].forEach(function(type){ticker.addEventListener(type,function(){ticker.classList.remove('paused')})});
       set('joyEyebrow',C.joySection.eyebrow);set('joyTitle',C.joySection.title);set('joyText',C.joySection.text);var joyVideo=document.getElementById('joyVideo');joyVideo.src=C.joySection.video;joyVideo.setAttribute('aria-label',C.joySection.videoLabel);joyVideo.muted=true;joyVideo.defaultMuted=true;joyVideo.disablePictureInPicture=true;joyVideo.setAttribute('controlsList','nodownload noplaybackrate noremoteplayback');joyVideo.addEventListener('loadeddata',function(){joyVideo.play().catch(function(){})},{once:true});joyVideo.load();
